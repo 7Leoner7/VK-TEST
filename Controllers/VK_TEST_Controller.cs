@@ -39,7 +39,7 @@ namespace VK_TEST.Controllers
         }
 
         /// <summary>
-        /// Задержка. Нужна для демонстрации работы CreateUser
+        /// Delay. Needed to demonstrate how CreateUser works.
         /// </summary>
         /// <returns></returns>
         private async Task DelayDequene()

@@ -38,7 +38,6 @@ namespace VK_TEST.VK_T_Objects.Services
         private IDbProvider<UserGroup> UserGroups { get; set; }
         private IDbProvider<UserState> UserStates { get; set; }
         private IDbProvider<LimiterCount> LimiterCount { get; set; }
-        static private Queue<User> QueneOfRegisterUser { get; set; } = new();
 
         public UserService(
             IDbProvider<User> Users,
@@ -88,7 +87,7 @@ namespace VK_TEST.VK_T_Objects.Services
                 var ac = LimiterCount.Get((int)ListLimiterCounter.Admin_Counter);
                 var al = LimiterCount.Get((int)ListLimiterCounter.Admin_Limit);
                 if (ac.Count >= al.Count)
-                    throw new Exception("В системе уже есть админ");
+                    throw new Exception("Admin is already exist");
                 ac.Count++;
                 LimiterCount.Update(ac);
                 return Results.Ok(Users.Create(user));

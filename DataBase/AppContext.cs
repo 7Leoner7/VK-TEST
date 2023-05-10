@@ -10,6 +10,9 @@ namespace VK_TEST.DataBase
         public DbSet<UserGroup> UserGroups { get; set; }
         public DbSet<LimiterCount> LimiterCounts { get; set; }
 
+        /// <summary>
+        /// Add base objects in db
+        /// </summary>
         private void Init()
         {
             if (LimiterCounts.Count() == 0)

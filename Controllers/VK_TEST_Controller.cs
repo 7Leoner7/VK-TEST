@@ -35,7 +35,7 @@ namespace VK_TEST.Controllers
             var username = credentials[0];
 
             var group = this.UserService.GetUserGroup(username) ?? UserGroup.AllGroups[0];
-            if (group.Code != UserGroup.AllGroups[1].Code) throw new Exception("Ќедостаточно прав");
+            if (group.Code != UserGroup.AllGroups[1].Code) throw new Exception("You don't have permission");
         }
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace VK_TEST.Controllers
                         UserState = UserService.GetAllStates().First(x => x.Code == "Active")
                     };
 
-                    if (IsUserContainsInQofRU(user)) throw new Exception("ѕользователь с таким логином уже зарегистрировалс€");
-                    if (IsUserContainsInDB(user)) throw new Exception("ѕользователь с таким логином уже зарегистрировалс€");
+                    if (IsUserContainsInQofRU(user)) throw new Exception("User with this login is exist");
+                    if (IsUserContainsInDB(user)) throw new Exception("User with this login is exist");
 
                     QueneOfRegisterUser.Enqueue(user);
                     await DelayDequene();
@@ -115,8 +115,8 @@ namespace VK_TEST.Controllers
                         UserState = UserService.GetAllStates().First(x => x.Code == "Active")
                     };
 
-                    if (IsUserContainsInQofRU(user)) throw new Exception("ѕользователь с таким логином уже зарегистрировалс€");
-                    if (IsUserContainsInDB(user)) throw new Exception("ѕользователь с таким логином уже зарегистрировалс€");
+                    if (IsUserContainsInQofRU(user)) throw new Exception("User with this login is exist");
+                    if (IsUserContainsInDB(user)) throw new Exception("User with this login is exist");
 
                     QueneOfRegisterUser.Enqueue(user);
                     await DelayDequene();

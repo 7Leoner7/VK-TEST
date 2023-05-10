@@ -117,7 +117,7 @@ namespace VK_TEST.UnitTests
             VK_TEST_Controller controller = new VK_TEST_Controller(logger.Object, UserService);
 
             var curr_get = UserService.CreateAdmin(new_user);
-            var corr_get = Results.Problem(detail: "В системе уже есть админ", statusCode: 409);
+            var corr_get = Results.Problem(detail: "Admin is already exist", statusCode: 409);
 
             var Jobj1 = JObject.FromObject(curr_get);
             var Jobj2 = JObject.FromObject(corr_get);

@@ -6,7 +6,7 @@
         public string? Description { get; set; }
 
         /// <summary>
-        /// Список для инициализации БД
+        /// List for init DB
         /// </summary>
         public static List<UserGroup> AllGroups = new List<UserGroup>()
         {

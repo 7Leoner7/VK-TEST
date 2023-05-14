@@ -15,6 +15,9 @@ namespace VK_TEST.Controllers
     public class VK_TEST_Controller : ControllerBase
     {
         private readonly ILogger<VK_TEST_Controller> _logger;
+        /// <summary>
+        /// This queue stores users who have recently registered
+        /// </summary>
         static private Queue<User> QueneOfRegisterUser { get; set; } = new();
         private IUserService UserService { get; set; }
 
